@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "./index.js";
+import PrimaryButton, { SecondaryButton, TertiaryButton } from "./Buttons.js";
 
 //👇 This default export determines where your story goes in the story list
 export default {
