@@ -22,7 +22,8 @@
   "homepage": "https://github.com/casvil/another-react-library-component#readme",
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "styled-components-modifiers": "^1.2.5"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
