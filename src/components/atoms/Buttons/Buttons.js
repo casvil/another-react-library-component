@@ -12,6 +12,110 @@ const BUTTON_MODIFIERS = {
     font-size: ${typeScale.h5};
     padding: 16px 24px;
   `,
+  warning: () => `
+    background-color: ${defaultTheme.status.warningColor};
+    border: 2px solid ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.textColorInverted};
+    
+    &:focus {
+      outline: 3px solid ${defaultTheme.status.warningHoverColor};
+      outline-offset: 2px;
+    } 
+    
+    &focus, &:hover {
+      background-color: ${defaultTheme.status.warningHoverColor};
+    }
+    
+    &:active {
+      border: 2px solid ${defaultTheme.status.warningColor};
+      background-color: ${defaultTheme.status.warningActiveColor};
+    }
+  `,
+  error: () => `
+    background-color: ${defaultTheme.status.errorActiveColor};
+    border: 2px solid ${defaultTheme.status.errorActiveColor};
+    color: ${defaultTheme.textColorInverted};
+    
+    &:focus {
+      outline: 3px solid ${defaultTheme.status.errorHoverColor};
+      outline-offset: 2px;
+    } 
+    
+    &focus, &:hover {
+      background-color: ${defaultTheme.status.errorHoverColor};
+    }
+    
+    &:active {
+      border: 2px solid ${defaultTheme.status.errorActiveColor};
+      background-color: ${defaultTheme.status.errorActiveColor};
+    }
+  `,
+  success: () => `
+    background-color: ${defaultTheme.status.successActiveColor};
+    border: 2px solid ${defaultTheme.status.successActiveColor};
+    color: ${defaultTheme.textColorInverted};
+    
+    &:focus {
+      outline: 2px solid ${defaultTheme.status.successHoverColor};
+      outline-offset: 2px;
+    } 
+    
+    &focus, &:hover {
+      background-color: ${defaultTheme.status.successHoverColor};
+    }
+    
+    &:active {
+      border: 2px solid ${defaultTheme.status.successActiveColor};
+      background-color: ${defaultTheme.status.successActiveColor};
+    }
+  `,
+};
+
+const TERTIARY_BUTTON_MODIFIERS = {
+  small: () => `
+    font-size: ${typeScale.helperText};
+    padding: 8px;
+  `,
+  large: () => `
+    font-size: ${typeScale.h5};
+    padding: 16px 24px;
+  `,
+  warning: () => `
+    color: ${defaultTheme.status.warningColor};
+
+    &:focus {
+      outline: 3px solid ${defaultTheme.status.warningHoverColor};
+      outline-offset: 2px;
+    } 
+
+    &focus, &:hover {
+      background-color: ${defaultTheme.status.warningHoverColor};
+    }
+  `,
+  error: () => `
+    color: ${defaultTheme.status.errorColor};
+    
+    &:focus {
+      outline: 3px solid ${defaultTheme.status.errorHoverColor};
+      outline-offset: 2px;
+    } 
+
+    &focus, &:hover {
+      background-color: ${defaultTheme.status.errorHoverColor};
+    }
+  `,
+  success: () => `
+    color: ${defaultTheme.status.successColor};
+    
+    &:focus {
+      outline: 2px solid ${defaultTheme.status.successHoverColor};
+      outline-offset: 2px;
+    } 
+
+    &focus, &:hover {
+      background-color: ${defaultTheme.status.successHoverColor};
+    }
+  `,
 };
 
 const Button = styled.button`
@@ -40,11 +144,11 @@ const Button = styled.button`
   }
 `;
 
-const PrimaryButton = styled(Button)`
-  background-color ${defaultTheme.primaryColor};
+export const PrimaryButton = styled(Button)`
+  background-color: ${defaultTheme.primaryColor};
   border: none;
   color: white;
-  
+
   &:disabled {
     background-color: ${defaultTheme.disabled};
     color: ${defaultTheme.textOnDisabled};
@@ -71,6 +175,7 @@ export const SecondaryButton = styled(Button)`
 
 export const TertiaryButton = styled(Button)`
   background: none;
+  background-color: none;
   border: none;
   color: ${defaultTheme.primaryColor};
 
@@ -80,7 +185,5 @@ export const TertiaryButton = styled(Button)`
     cursor: not-allowed;
   }
 
-  ${applyStyleModifiers(BUTTON_MODIFIERS)};
+  ${applyStyleModifiers(TERTIARY_BUTTON_MODIFIERS)};
 `;
-
-export default PrimaryButton;
